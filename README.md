@@ -94,6 +94,7 @@ begin
 end Behavioral;
 ```
 Code for **top_level**
+```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
