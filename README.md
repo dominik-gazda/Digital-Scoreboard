@@ -6,7 +6,8 @@ Schematic of the current timer design for measuring playtime in minutes and seco
 ![image](https://github.com/user-attachments/assets/1e54748c-80d1-4b69-98d6-a79cd946e7f6)
 
 
-#### clock_enable
+#### Clock enable
+---
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -44,7 +45,8 @@ begin
 
 end Behavioral;
 ```
-#### **counter**
+#### **Counter**
+---
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -93,7 +95,8 @@ begin
 
 end Behavioral;
 ```
-#### **top_level**
+#### **Top level**
+---
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
