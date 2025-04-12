@@ -7,6 +7,7 @@ Schematic of the current timer design for measuring playtime in minutes and seco
 
 
 #### Clock enable
+
 ---
 ```vhdl
 library IEEE;
