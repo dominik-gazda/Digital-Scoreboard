@@ -5,7 +5,7 @@ Digital scoreboard with timer for your preferred sport
 Schematic of the current timer design for measuring playtime in minutes and seconds.
 ![image](https://github.com/user-attachments/assets/1e54748c-80d1-4b69-98d6-a79cd946e7f6)
 
-
+```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -52,7 +52,7 @@ begin
     carry <= carry_next;
 
 end Behavioral;
-
+```
 
 ## Score
 
