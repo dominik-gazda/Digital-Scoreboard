@@ -32,7 +32,7 @@ _Note: Cursor indicates time of 53 minutes and 23 seconds._
 At the beginning, when the `reset` button is pressed, all counters are set to zero. The timer uses four counters in total: `count0`, `count2`, and `count3`, which count from 0 to 9, while `count1` counts the tens of seconds (from 0 to 5). Each time `count0` overflows, it increments `count1` by one. Similarly, when `count1` overflows, it increments `count2`, and so on. When the `pause` button is pressed, it remains high until pressed again (`pause_state`), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The `clk` ensures that each increment of the counter takes exactly one second.
 
 
-#### Simulations of components used in digital timer
+### Simulations of components used in digital timer
 
 Digital timer consist of five components:
 - `clock_enable`,
