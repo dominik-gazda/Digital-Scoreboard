@@ -3,8 +3,7 @@ Digital scoreboard with timer for your preferred sport
 
 ## INPUTS SECTION
 ## SCORE COUNTERS
-## TIMER COUNTERS
-
+## TIMER
 This is a digital timer designed for a scoreboard, displaying the current time across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, maintaining a 1-second interval for counting. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow user control. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. 
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">\
