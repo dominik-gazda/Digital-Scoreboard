@@ -24,12 +24,39 @@ _Schematic of timer design._
 
 Maximum counting time is set to 99 minutes 59 seconds, after overflowing timer automatically pause.  
 
-#### Simulations of Digital Timer 
+### Simulations of Digital Timer 
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">\
 _Note: Cursor indicates time of 53 minutes and 23 seconds._ 
 
 At the beginning, when the `reset` button is pressed, all counters are set to zero. The timer uses four counters in total: `count0`, `count2`, and `count3`, which count from 0 to 9, while `count1` counts the tens of seconds (from 0 to 5). Each time `count0` overflows, it increments `count1` by one. Similarly, when `count1` overflows, it increments `count2`, and so on. When the `pause` button is pressed, it remains high until pressed again (`pause_state`), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The `clk` ensures that each increment of the counter takes exactly one second.
+
+
+#### Simulations of components used in digital timer
+
+Digital timer consist of five components:
+- clock_enable,
+- pause_toggle,
+- enable_logic,
+- counter and counter_des
+
+##### clock_enable
+<img width=80% height=80% src="https://github.com/user-attachments/assets/d8c5e9e6-fce9-4680-88f8-d72387ee9a7e">\
+##### pause_toggle
+<img width=80% height=80% src="https://github.com/user-attachments/assets/1a5bc372-2564-4614-9072-24e384f9456c">\
+##### enable_logic
+<img width=80% height=80% src="https://github.com/user-attachments/assets/b357a521-029a-4c5c-816f-47949b865cd9">\
+##### counter 
+<img width=80% height=80% src="https://github.com/user-attachments/assets/80b64a36-96e1-43eb-bb8e-a1eba22586b7">\
+##### counter_des
+<img width=80% height=80% src="https://github.com/user-attachments/assets/51e5e277-ee3a-443f-9d79-f8386234a7f4">\
+
+
+
+
+
+
+
 
 
 
