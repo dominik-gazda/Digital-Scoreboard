@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_toggler_behav/xsimk -simmode gui -wdb tb_toggler_behav.wdb -simrunnum 0 -socket 53523
+Design successfully loaded
+Design Loading Memory Usage: 402360 KB (Peak: 402412 KB)
+Design Loading CPU Usage: 700 ms

@@ -1,0 +1,7 @@
+Running: xsim.dir/tb_i8to1Multiplex_behav/xsimk -simmode gui -wdb tb_i8to1Multiplex_behav.wdb -simrunnum 0 -socket 32867
+Design successfully loaded
+Design Loading Memory Usage: 402356 KB (Peak: 402408 KB)
+Design Loading CPU Usage: 680 ms
+Simulation completed
+Simulation Memory Usage: 484092 KB (Peak: 541624 KB)
+Simulation CPU Usage: 690 ms
