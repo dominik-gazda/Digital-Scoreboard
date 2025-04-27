@@ -28,10 +28,12 @@ Schematic of design
 
 For better understanding of the simulation and since it's difficult to showcase the entire process at once, it is divided into three images. The first image shows the entire process from start to finish.
 
+
 <img width=75% height=75% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">
 _Note: Cursor indicates time of 53 minutes and 23 seconds._ 
 
-At the beginning, when the 'reset' button is pressed, all counters are set to zero. The timer uses four counters in total: 'count0', 'count2', and 'count3', which count from 0 to 9, while count1 counts the tens of seconds (from 0 to 5). Each time 'count0' overflows, it increments 'count1' by one. Similarly, when 'count1' overflows, it increments 'count2', and so on. When the 'pause' button is pressed, it remains high until pressed again ('pause_state'), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The 'clk' ensures that each increment of the counter takes exactly one second.
+
+At the beginning, when the `reset` button is pressed, all counters are set to zero. The timer uses four counters in total: `count0`, `count2`, and `count3`, which count from 0 to 9, while `count1` counts the tens of seconds (from 0 to 5). Each time count0 overflows, it increments count1 by one. Similarly, when count1 overflows, it increments count2, and so on. When the `pause` button is pressed, it remains high until pressed again (`pause_state`), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The `clk` ensures that each increment of the counter takes exactly one second.
 
 
 
