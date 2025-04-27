@@ -1,6 +1,35 @@
 # Digital-Scoreboard
 Digital scoreboard with timer for your preferred sport
 
+## INPUTS SECTION
+## SCORE COUNTERS
+## TIME COUNTERS
+## OUTPUT SECTION
+It's main purpouse is to display the data comming from counters to 7 Segment Displays.
+The output section consists of _2 main elements:_ **Multiplexer** and **StateMachine**
+Then there are _3 support elements:_ **Toggler**, **ClockEnable** and **bin2Seg**
+### Main elements:
+#### State Machine:
+INPUTS:
+- RST    # global reset
+- CLK    # 100MHz clock
+- EN     # event each 150us   
+OUTPUTS:
+- stateM # multiplexer switch signal
+- stateA # 7 segment anodes control
+- stateDP    # 7 decimal points control
+INTERNAL SIGNALS:
+- currentPos
+- nextPos
+This block is **_responsible for multiplexing_** the _7 segment_ display trough the _8 to 1 multiplexer_
+It relies on the _clockEnable_ block as it's **_en_** input. it cycles trough it's predefined states _POS0 > POS7_, it changes the state on every _EN_ event.
+
+The states of the FSM are stored in the internal signals _currentPos_ and _nextPos_.
+According to the _currentPos_ signal, the outputs are then set. 
+
+
+
+
 ## Timer
 Schematic of the current timer design for measuring playtime in minutes and seconds. 
 
