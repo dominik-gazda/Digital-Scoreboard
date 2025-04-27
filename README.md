@@ -43,6 +43,7 @@ Digital timer consist of five components:
 A `pulse` is generated every second, synchronized with the rising edge of the clock.
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/d8c5e9e6-fce9-4680-88f8-d72387ee9a7e">
+
 ---
 
 #### pause_toggle
