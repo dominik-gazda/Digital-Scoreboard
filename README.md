@@ -31,7 +31,7 @@ Maximum counting time set in code is 99 minutes 59 seconds, after overflowing ti
 For better understanding of the simulation and since it's difficult to showcase the entire process at once, it is divided into three images. The first image shows the entire process from start to finish.
 
 
-<img width=75% height=75% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">
+<img width=75% height=75% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">\
 _Note: Cursor indicates time of 53 minutes and 23 seconds._ 
 
 
