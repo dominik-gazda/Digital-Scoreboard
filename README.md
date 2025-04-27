@@ -7,7 +7,7 @@ Digital scoreboard with timer for your preferred sport
 
 This is a digital timer designed for a scoreboard, displaying the current time across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, maintaining a 1-second interval for counting. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow user control. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. 
 
-<img width=75% height=75% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">\
+<img width=100% height=100% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">\
 _Schematic of timer design._
 
 #### INPUTS:
@@ -26,7 +26,7 @@ Maximum counting time is set to 99 minutes 59 seconds, after overflowing timer a
 
 #### Simulations of Digital Timer 
 
-<img width=75% height=75% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">\
+<img width=80% height=80% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">\
 _Note: Cursor indicates time of 53 minutes and 23 seconds._ \
 
 At the beginning, when the `reset` button is pressed, all counters are set to zero. The timer uses four counters in total: `count0`, `count2`, and `count3`, which count from 0 to 9, while `count1` counts the tens of seconds (from 0 to 5). Each time count0 overflows, it increments count1 by one. Similarly, when count1 overflows, it increments count2, and so on. When the `pause` button is pressed, it remains high until pressed again (`pause_state`), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The `clk` ensures that each increment of the counter takes exactly one second.
