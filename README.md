@@ -40,12 +40,12 @@ Digital timer consist of clock_enable, pause_toggle, counter and counter_des
 
 Maximum counting time set in code is 99 minutes 59 seconds, after overflowing timer automatically pause.  
 
-####INPUTS:
+#### INPUTS:
 **CLK100MHZ** – Main clock input running at 100 MHz.
 **BTNC** – Reset button input; resets the entire timer when pressed. 
 **BTNU** – Pause button input; toggles the timer between running and paused states.
 
-####OUTPUTS:
+#### OUTPUTS:
 **COUNT0** – 4-bit output representing units of seconds (0–9).
 **COUNT1** – 4-bit output representing tens of seconds (0–5).
 **COUNT2** – 4-bit output representing units of minutes (0–9).
