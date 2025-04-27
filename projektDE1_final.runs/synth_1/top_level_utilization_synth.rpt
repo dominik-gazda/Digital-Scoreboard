@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Sun Apr 27 18:05:08 2025
-| Host         : thinkpad-t480 running 64-bit Fedora Linux 41 (Workstation Edition)
+| Date         : Sun Apr 27 21:06:21 2025
+| Host         : ser6 running 64-bit Fedora Linux 42 (Workstation Edition)
 | Command      : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
 | Design       : top_level
 | Device       : xc7a50ticsg324-1L
