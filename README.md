@@ -54,13 +54,13 @@ This component toggles the `pause_out` signal based on the `btn_pause` input. It
 #### enable_logic
 Enable logic controls the `enable_out` and `auto_pause` signals based on several inputs. It activates `enable_out` when the `pulse` is active and neither `pause` nor `auto_pause` is triggered. The `auto_pause` signal is set when `carry3` is high (indicating the last counter overflow) and can be reset by the `rst` input. The state of `auto_pause` remains until a reset or overflow happens.\
 
-<img width=80% height=80% src="https://github.com/user-attachments/assets/b357a521-029a-4c5c-816f-47949b865cd9">
+<img width=80% height=80% src="https://github.com/user-attachments/assets/b357a521-029a-4c5c-816f-47949b865cd9">\
 
 ---
 #### counter (counter0,2,3)
 This component is a 4-bit counter that increments on each clock cycle when enabled (`en`). When it reaches 9, it overflows, resets to 0, and generates a `carry` signal. The counter can be reset using the `rst` input. The current value is output as the `count` signal, and the `carry` signal indicates an overflow.\
 
-<img width=80% height=80% src="https://github.com/user-attachments/assets/80b64a36-96e1-43eb-bb8e-a1eba22586b7">
+<img width=80% height=80% src="https://github.com/user-attachments/assets/80b64a36-96e1-43eb-bb8e-a1eba22586b7">\
 
 ---
 #### counter_des (counter1)
