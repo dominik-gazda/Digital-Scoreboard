@@ -9,23 +9,78 @@ It's main purpouse is to display the data comming from counters to 7 Segment Dis
 The output section consists of _2 main elements:_ **Multiplexer** and **StateMachine**
 Then there are _3 support elements:_ **Toggler**, **ClockEnable** and **bin2Seg**
 ### Main elements:
-#### State Machine:
+#### **State Machine:**
+**RTL SCHEMATIC**
+![SCH_stateMachine](https://github.com/user-attachments/assets/38a8e297-a9c3-4852-b8f7-2b267aeaaec7)
+
 INPUTS:
 - RST    # global reset
 - CLK    # 100MHz clock
-- EN     # event each 150us   
+- EN     # event each 150us
+   
 OUTPUTS:
 - stateM # multiplexer switch signal
 - stateA # 7 segment anodes control
 - stateDP    # 7 decimal points control
+
 INTERNAL SIGNALS:
 - currentPos
 - nextPos
+
 This block is **_responsible for multiplexing_** the _7 segment_ display trough the _8 to 1 multiplexer_
 It relies on the _clockEnable_ block as it's **_en_** input. it cycles trough it's predefined states _POS0 > POS7_, it changes the state on every _EN_ event.
 
+![SM_multiplex_0](https://github.com/user-attachments/assets/0cd92251-c3b6-4c42-9668-b2330da2ed0f)
+
+
 The states of the FSM are stored in the internal signals _currentPos_ and _nextPos_.
-According to the _currentPos_ signal, the outputs are then set. 
+According to the _currentPos_ signal, the outputs are then set.
+
+**SIMULATION**
+![SIM_stateMachine](https://github.com/user-attachments/assets/674893f3-4481-4f1a-9080-34706f7b2bda)
+
+#### **Multiplexer:**
+
+**RTL SCHEMATIC**
+![SCH_8to1Multiplex](https://github.com/user-attachments/assets/0c6d76c4-8f5a-4b98-a6a6-c0ca1a23c8d4)
+
+INPUTS:
+- counter0 # input from corresponding counters
+- counter1
+- counter2
+- counter3
+- counter4
+- counter5
+- counter6
+- counter7
+- switch    # select input from StateMachine
+
+OUTPUTS:
+- output    # output counters data to bin2seg
+
+This block is a simple multiplexer.
+
+**SIMULATION**
+![SIM_8to1Multiplex](https://github.com/user-attachments/assets/9f3d17fc-f20d-48a6-9503-88437e37a881)
+
+#### **Toggler:**
+
+**RTL SCHEMATIC**
+![SCH_toggler](https://github.com/user-attachments/assets/ce96e6f7-7da8-4e23-9643-3239686ccc38)
+
+INPUTS:
+- clk
+- rst
+- clk_500
+- pause
+
+OUTPUTS:
+- outp
+
+This block interfaces with the _clear_ input of the _bi2seg_ block, if the input signal _pause_ is high, it generates a "clock" signal on it's output _outp_, the frequency of the clock is dependant on the _clk_500_ input, this has the practical effect of blinking the whole 7 segment display. 
+
+**SIMULATION**
+
 
 
 
