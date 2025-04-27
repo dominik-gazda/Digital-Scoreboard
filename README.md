@@ -13,7 +13,7 @@ _Schematic of timer design._
 #### INPUTS:
 - **CLK100MHZ** – Main clock input running at 100 MHz.
 - **BTNC** – Reset button input; resets the entire timer when pressed. 
-- **BTNU** – Pause button input; toggles the timer between running and paused states.
+- **BTNU** – Pause button input; toggles the timer between active and paused states.
 
 #### OUTPUTS:
 - **COUNT0** – 4-bit output representing units of seconds (0–9).
