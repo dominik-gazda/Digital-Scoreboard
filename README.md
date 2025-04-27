@@ -45,24 +45,28 @@ A `pulse` is generated every second, synchronized with the rising edge of the cl
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/d8c5e9e6-fce9-4680-88f8-d72387ee9a7e">
 ---
+
 #### pause_toggle
 This component toggles the `pause_out` signal based on the `btn_pause` input. It detects when the button is pressed to switch between paused and active state, holding the state until the button is pressed again.\
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/1a5bc372-2564-4614-9072-24e384f9456c">
 
 ---
+
 #### enable_logic
 Enable logic controls the `enable_out` and `auto_pause` signals based on several inputs. It activates `enable_out` when the `pulse` is active and neither `pause` nor `auto_pause` is triggered. The `auto_pause` signal is set when `carry3` is high (indicating the last counter overflow) and can be reset by the `rst` input. The state of `auto_pause` remains until a reset or overflow happens.\
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/b357a521-029a-4c5c-816f-47949b865cd9">\
 
 ---
+
 #### counter (counter0,2,3)
 This component is a 4-bit counter that increments on each clock cycle when enabled (`en`). When it reaches 9, it overflows, resets to 0, and generates a `carry` signal. The counter can be reset using the `rst` input. The current value is output as the `count` signal, and the `carry` signal indicates an overflow.\
 
 <img width=80% height=80% src="https://github.com/user-attachments/assets/80b64a36-96e1-43eb-bb8e-a1eba22586b7">\
 
 ---
+
 #### counter_des (counter1)
 `counter_des` works same way as the counter, but it overflows after reaching a value of 5 (:59 seconds --> :00 seconds)\
 
@@ -149,49 +153,3 @@ This block interfaces with the _clear_ input of the _bi2seg_ block, if the input
 
 
 
-
-## Timer
-This is a digital timer designed for a scoreboard, counting seconds and minutes, with the current time displayed across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, ensuring the counting speed is maintained at 1-second intervals. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow the user to control the timer’s operation. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. The design outputs the current time value and indicates whether the timer is paused for further use in main design.   
-
-<img width=75% height=75% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">
-
-Digital timer consist of clock_enable, pause_toggle, counter and counter_des
-
-
-Maximum counting time set in code is 99 minutes 59 seconds, after overflowing timer automatically pause.  
-
-#### INPUTS:
-- **CLK100MHZ** – Main clock input running at 100 MHz.
-- **BTNC** – Reset button input; resets the entire timer when pressed. 
-- **BTNU** – Pause button input; toggles the timer between running and paused states.
-
-#### OUTPUTS:
-- **COUNT0** – 4-bit output representing units of seconds (0–9).
-- **COUNT1** – 4-bit output representing tens of seconds (0–5).
-- **COUNT2** – 4-bit output representing units of minutes (0–9).
-- **COUNT3** – 4-bit output representing tens of minutes (0–9).
-- **PAUSE_STATE** – Output indicating whether the timer is currently paused.
-
-#### Simulation
-![image](https://github.com/user-attachments/assets/4415f52f-59e8-4cbd-a26f-d592962f4106)
-This is simulation of entire timer 
-
-![image](https://github.com/user-attachments/assets/54729408-4635-4a97-b20a-f1715cf2846c)
-![image](https://github.com/user-attachments/assets/ee8a0eda-792b-4cc2-ae3c-f5297e7885bf)
-
-### Clock enable
----
-
-#### Simulation
-### **Counters**
----
-#### Simulation
-### **Enable logic**
----
-#### Simulation
-
-
-
-## Score
-
-## Displaying data - 7 Segment Driver
