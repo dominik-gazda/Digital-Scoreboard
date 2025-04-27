@@ -7,8 +7,8 @@ Digital scoreboard with timer for your preferred sport
 
 This is a digital timer designed for a scoreboard, counting seconds and minutes, with the current time displayed across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, ensuring the counting speed is maintained at 1-second intervals. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow the user to control the timer’s operation. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. The design outputs the current time value and indicates whether the timer is paused for further use in main design.   
 
-Schematic of timer design.\
 <img width=75% height=75% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">
+_Schematic of timer design._\
 
 #### INPUTS:
 - **CLK100MHZ** – Main clock input running at 100 MHz.
@@ -22,18 +22,12 @@ Schematic of timer design.\
 - **COUNT3** – 4-bit output representing tens of minutes (0–9).
 - **PAUSE_STATE** – Output indicating whether the timer is currently paused.
 
-Maximum counting time set in code is 99 minutes 59 seconds, after overflowing timer automatically pause.  
-
-
+Maximum counting time is set to 99 minutes 59 seconds, after overflowing timer automatically pause.  
 
 #### Simulations of Digital Timer 
 
-For better understanding of the simulation and since it's difficult to showcase the entire process at once, it is divided into three images. The first image shows the entire process from start to finish.
-
-
 <img width=75% height=75% src="https://github.com/user-attachments/assets/7842978e-9953-4b33-93db-feb2377a95bc">\
-_Note: Cursor indicates time of 53 minutes and 23 seconds._ 
-
+_Note: Cursor indicates time of 53 minutes and 23 seconds._ \
 
 At the beginning, when the `reset` button is pressed, all counters are set to zero. The timer uses four counters in total: `count0`, `count2`, and `count3`, which count from 0 to 9, while `count1` counts the tens of seconds (from 0 to 5). Each time count0 overflows, it increments count1 by one. Similarly, when count1 overflows, it increments count2, and so on. When the `pause` button is pressed, it remains high until pressed again (`pause_state`), pausing the counting process. During the pause, all counters hold their last value. After the pause button is pressed again, the timer resumes counting and will automatically pause when it reaches the limit of 99 minutes and 99 seconds, without the requirement of pressing the pause button. The `clk` ensures that each increment of the counter takes exactly one second.
 
