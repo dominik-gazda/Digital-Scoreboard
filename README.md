@@ -8,7 +8,7 @@ Digital scoreboard with timer for your preferred sport
 This is a digital timer designed for a scoreboard, counting seconds and minutes, with the current time displayed across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, ensuring the counting speed is maintained at 1-second intervals. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow the user to control the timer’s operation. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. The design outputs the current time value and indicates whether the timer is paused for further use in main design.   
 
 <img width=75% height=75% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">\
-_Schematic of timer design._\
+_Schematic of timer design._
 
 #### INPUTS:
 - **CLK100MHZ** – Main clock input running at 100 MHz.
