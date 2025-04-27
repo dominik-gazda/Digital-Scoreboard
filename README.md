@@ -35,6 +35,10 @@ This is a digital timer designed for a scoreboard, counting seconds and minutes,
 
 <img align="center" width=75% height=75% src="https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901">
 
+<p align="center">
+  <img width="75%" height="75%" src="[https://picsum.photos/460/300](https://github.com/user-attachments/assets/5b6d5d80-12ac-4ba3-bab7-55673a7db901)">
+</p>
+
 Digital timer consist of clock_enable, pause_toggle, counter and counter_des
 
 
