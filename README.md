@@ -2,6 +2,14 @@
 Digital scoreboard with timer for your preferred sport
 
 ## INPUTS SECTION
+The inputs section is only a _debouncer block_ consisting of 6 D-latches and one AND gate.
+It's purpouse is to delay the input signal from the buttons, which have a heavy load of jitter signal.
+**RTL SCHEMATIC**
+![image](https://github.com/user-attachments/assets/a18fb523-01ff-4802-bd25-72c33bf544ef)
+**SIMULATION**
+![image](https://github.com/user-attachments/assets/802121aa-aedd-4885-b96f-5ebe7343d429)
+
+
 ## SCORE COUNTERS
 ## TIMER
 This is a digital timer designed for a scoreboard, displaying the current time across four 4-bit outputs. A clock enable block generates timing pulses from a 100 MHz clock, maintaining a 1-second interval for counting. The counters are cascaded to handle digit overflows automatically, while a pause toggle and reset input allow user control. The timer outputs the current time through four independent 4-bit signals, which are then connected to a multiplexer for further processing. 
