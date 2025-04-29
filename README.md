@@ -172,7 +172,7 @@ According to the `currentPos` signal, the outputs are then set.
 #### Simulation
 ![SIM_stateMachine](https://github.com/user-attachments/assets/674893f3-4481-4f1a-9080-34706f7b2bda)
 
-#### Multiplexer:
+#### **Multiplexer**:
 
 _RTL SCHEMATIC_
 ![SCH_8to1Multiplex](https://github.com/user-attachments/assets/0c6d76c4-8f5a-4b98-a6a6-c0ca1a23c8d4)
