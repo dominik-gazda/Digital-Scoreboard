@@ -57,11 +57,13 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-232530-ser6/incrSyn
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-15877-ser6/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a50ticsg324-1L
+create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -70,6 +72,8 @@ set_property webtalk.parent_dir /home/martin/Documents/Digital-Scoreboard/projek
 set_property parent.project_path /home/martin/Documents/Digital-Scoreboard/projektDE1_final.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
+set_property board_part_repo_paths {/home/martin/.Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
+set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
 set_property ip_output_repo /home/martin/Documents/Digital-Scoreboard/projektDE1_final.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -98,8 +102,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_1/new/NexysA7.xdc
-set_property used_in_implementation false [get_files /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_1/new/NexysA7.xdc]
+read_xdc /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_2/new/nexys4rr.xdc
+set_property used_in_implementation false [get_files /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_2/new/nexys4rr.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
@@ -107,7 +111,7 @@ read_checkpoint -auto_incremental -incremental /home/martin/Documents/Digital-Sc
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top_level -part xc7a50ticsg324-1L
+synth_design -top top_level -part xc7a100tcsg324-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

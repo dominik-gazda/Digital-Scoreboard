@@ -344,7 +344,7 @@ begin
 
     CE_TIME : clock_enable
         generic map (
-            N_PERIODS => 100_000_000  -- 1 sekunda @ 100 MHz
+            N_PERIODS => 100_000  -- 1 sekunda @ 100 MHz
         )
         port map (
             clk => CLK100MHZ,
@@ -368,7 +368,7 @@ begin
         port map (
             clk => CLK100MHZ,
             rst => sigBTND,
-            btn_pause => sigBTNU,
+            btn_pause => sigBTNU OR sig_timer_carry3,
             pause_out => sigPauseOut
         );
 
@@ -432,7 +432,7 @@ begin
         
     sigBTNRf <= sigBTNR and not sigPauseOut;
     sigBTNLf <= sigBTNL and not sigPauseOut;
-
+    -- sig_timer_carry3 <= sigBTNU; --autopauza po preteceni casovaca
     SCORE_0_SYNC : SyncLogic
         port map (
             CLK => CLK100MHZ,

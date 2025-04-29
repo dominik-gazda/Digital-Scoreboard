@@ -1,12 +1,12 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Sun Apr 27 21:06:57 2025
+| Date         : Tue Apr 29 17:33:39 2025
 | Host         : ser6 running 64-bit Fedora Linux 42 (Workstation Edition)
 | Command      : report_methodology -file top_level_methodology_drc_routed.rpt -pb top_level_methodology_drc_routed.pb -rpx top_level_methodology_drc_routed.rpx
 | Design       : top_level
-| Device       : xc7a50ticsg324-1L
-| Speed File   : -1L
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
 | Design State : Fully Routed
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 

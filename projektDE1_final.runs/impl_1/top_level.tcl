@@ -108,10 +108,13 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-232530-ser6/incrSyn
-  set_param runs.launchOptions { -jobs 8  }
+  set_param xicom.use_bs_reader 1
+  set_param synth.incrementalSynthesisCache ./.Xil/Vivado-15877-ser6/incrSyn
+  set_param runs.launchOptions { -jobs 16  }
 OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7a50ticsg324-1L
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property board_part_repo_paths {/home/martin/.Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store} [current_project]
+  set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
@@ -124,13 +127,13 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/martin/Documents/Digital-Scoreboard/projektDE1_final.runs/synth_1/top_level.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_1/new/NexysA7.xdc
+  read_xdc /home/martin/Documents/Digital-Scoreboard/projektDE1_final.srcs/constrs_2/new/nexys4rr.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
-  link_design -top top_level -part xc7a50ticsg324-1L 
+  link_design -top top_level -part xc7a100tcsg324-1 
 OPTRACE "link_design" END { }
 OPTRACE "gray box cells" START { }
 OPTRACE "gray box cells" END { }

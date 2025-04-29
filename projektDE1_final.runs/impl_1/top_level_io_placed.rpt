@@ -1,15 +1,15 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date                      : Sun Apr 27 21:06:45 2025
+| Date                      : Tue Apr 29 17:33:23 2025
 | Host                      : ser6 running 64-bit Fedora Linux 42 (Workstation Edition)
 | Command                   : report_io -file top_level_io_placed.rpt
 | Design                    : top_level
-| Device                    : xc7a50ti
-| Speed File                : -1L
+| Device                    : xc7a100t
+| Speed File                : -1
 | Package                   : csg324
-| Package Version           : FINAL 2013-12-19
-| Package Pin Delay Version : VERS. 2.0 2013-12-19
+| Package Version           : FINAL 2012-07-17
+| Package Pin Delay Version : VERS. 2.0 2012-07-17
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 IO Information
