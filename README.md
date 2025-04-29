@@ -132,7 +132,7 @@ According to the _currentPos_ signal, the outputs are then set.
 #### OUTPUTS:
 - `output`    # output counters data to bin2seg
 
-This block is a simple multiplexer.
+_This block is a simple multiplexer._
 
 **SIMULATION**
 ![SIM_8to1Multiplex](https://github.com/user-attachments/assets/9f3d17fc-f20d-48a6-9503-88437e37a881)
