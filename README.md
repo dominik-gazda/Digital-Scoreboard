@@ -215,3 +215,7 @@ This block interfaces with the _clear_ input of the _bi2seg_ block, if the input
 **SIMULATION**
 
 ![SIM_toggler](https://github.com/user-attachments/assets/4f7636aa-7f65-4e02-94f2-b671230939d8)
+
+# Disclamer
+This project was created using `Vivado Version: 2024.2`
+During the creation of this project, Generative Artificial Inteligence has been used for code autocompletition (Github Copilot), and references.
