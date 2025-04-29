@@ -1,7 +1,6 @@
 # Digital-Scoreboard
 Digital scoreboard with timer for your preferred sport
-[
-https://github.com/user-attachments/assets/aa6adb97-e293-4899-94d3-e65fb41dfe5a](https://github.com/user-attachments/assets/b2d13675-147e-4c68-bfc5-1ffb16f01535)
+https://github.com/user-attachments/assets/b2d13675-147e-4c68-bfc5-1ffb16f01535
 
 ## INPUTS SECTION
 The inputs section is only a _debouncer block_ consisting of 6 D-latches and one AND gate.
