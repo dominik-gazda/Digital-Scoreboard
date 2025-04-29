@@ -4,8 +4,11 @@ Digital scoreboard with timer for your preferred sport
 ## INPUTS SECTION
 The inputs section is only a _debouncer block_ consisting of 6 D-latches and one AND gate.
 It's purpouse is to delay the input signal from the buttons, which have a heavy load of jitter signal.\
+
 **RTL SCHEMATIC**
 ![image](https://github.com/user-attachments/assets/a18fb523-01ff-4802-bd25-72c33bf544ef)
+
+
 **SIMULATION**
 ![image](https://github.com/user-attachments/assets/802121aa-aedd-4885-b96f-5ebe7343d429)
 
