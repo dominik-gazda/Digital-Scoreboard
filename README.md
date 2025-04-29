@@ -219,3 +219,9 @@ This block interfaces with the _clear_ input of the _bi2seg_ block, if the input
 # Disclamer
 This project was created using `Vivado Version: 2024.2`
 During the creation of this project, Generative Artificial Inteligence has been used for code autocompletition (Github Copilot), and references.
+
+# Team members and their respective work:
+- Gazda: Time counters section
+- Dzurus: Output section, Debouncing, Top Level
+- Gomba, Hedbavny: Score counters section
+
