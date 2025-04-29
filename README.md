@@ -105,7 +105,7 @@ _Schematic of Sync Logic design._
 `SyncLogic` is necessary to ensure that the button (`BTN`) and switch (`SW`) inputs are correctly captured on the clock edge (`CLK`). This prevents problems such as unstable signals and random errors when reading the inputs. For the button, it also stores the current (`BTN_SYNC`) and previous (`BTN_PREV`) states, allowing detection of a new press. The switch (`SW`) is also synchronized (`SW_SYNC`) to ensure that its position changes are reliably read.
 
 
-#### Simulation of Sync Logic
+### Simulation of Sync Logic
 ![Snímek obrazovky 2025-04-28 195340](https://github.com/user-attachments/assets/39668b53-e66d-49c9-b8b0-059721fc0536)
 
 At the beginning, all signals are in an idle state (0). At 50 ns, the button (`BTN`) is pressed, and on the next clock edge at 60 ns, `BTN_SYNC` updates to 1. The button is released at 70 ns, and at 80 ns, `BTN_SYNC` returns to 0 while `BTN_PREV` updates to 1. The switch (`SW`) is turned on between 90–100 ns, and `SW_SYNC` updates to 1 at 100 ns. After `SW` returns to 0 at 140 ns, `SW_SYNC` also resets to 0 at 150 ns. Finally, at 160 ns, the button is pressed again, and at 170 ns, `BTN_SYNC` reflects the change while `BTN_PREV` shows the previous state.
@@ -115,7 +115,7 @@ At the beginning, all signals are in an idle state (0). At 50 ns, the button (`B
 `counterLogic` is needed to count operation based on the synchronized button and switch inputs. It increments or decrements the counter values according to the switch setting (`SW_SYNC`) when a button press (`BTN_SYNC`) is detected.
 
 
-#### Simulation of Counter Logic
+### Simulation of Counter Logic
 ![Snímek obrazovky 2025-04-28 185355](https://github.com/user-attachments/assets/94f15315-7e41-4e9c-abb6-494948c82583)
 
 When the button (`BTN_SYNC`) is pressed while the switch (`SW_SYNC`) is set for counting up. Therefore, with each rising edge of the clock (`CLK`), the first counter (`CNT1_OUT`) increments by 1, starting from 0. When `CNT1_OUT` exceed more then 9 come into oveflow it resets to 0 and the second counter (`CNT2_OUT`) increments by 1. When we change (`SW_SYNC`) to 1 walue starts decresing to 0.
