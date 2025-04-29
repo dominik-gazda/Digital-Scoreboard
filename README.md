@@ -169,10 +169,10 @@ It relies on the `clockEnable` block as it's `en` input. it cycles trough it's p
 The states of the FSM are stored in the internal signals `currentPos` and `nextPos`.
 According to the `currentPos` signal, the outputs are then set.
 
-**SIMULATION**
+#### Simulation
 ![SIM_stateMachine](https://github.com/user-attachments/assets/674893f3-4481-4f1a-9080-34706f7b2bda)
 
-#### **Multiplexer:**
+#### Multiplexer:
 
 _RTL SCHEMATIC_
 ![SCH_8to1Multiplex](https://github.com/user-attachments/assets/0c6d76c4-8f5a-4b98-a6a6-c0ca1a23c8d4)
@@ -193,7 +193,7 @@ _RTL SCHEMATIC_
 
 _This block is a simple multiplexer._
 
-**SIMULATION**
+#### Simulation
 ![SIM_8to1Multiplex](https://github.com/user-attachments/assets/9f3d17fc-f20d-48a6-9503-88437e37a881)
 
 #### Toggler:
@@ -212,7 +212,7 @@ _This block is a simple multiplexer._
 
 This block interfaces with the _clear_ input of the _bi2seg_ block, if the input signal `pause` is high, it generates a "clock" signal on it's output `outp`, the frequency of the clock is dependant on the `clk_500` input, this has the practical effect of blinking the whole 7 segment display. 
 
-**SIMULATION**
+#### Simulation
 
 ![SIM_toggler](https://github.com/user-attachments/assets/4f7636aa-7f65-4e02-94f2-b671230939d8)
 
