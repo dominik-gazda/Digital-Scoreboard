@@ -105,76 +105,77 @@ _Schematic of Sync Logic design._
 ### Simulation of Sync Logic
 ![Snímek obrazovky 2025-04-28 195340](https://github.com/user-attachments/assets/39668b53-e66d-49c9-b8b0-059721fc0536)
 
-At the beginning, all signals are in an idle state (0). At 50 ns, the button (`BTN`) is pressed, and on the next clock edge at 60 ns, `BTN_SYNC` updates to 1. The button is released at 70 ns, and at 80 ns, `BTN_SYNC` returns to 0 while `BTN_PREV` updates to 1. The switch (`SW`) is turned on between 90–100 ns, and `SW_SYNC` updates to 1 at 100 ns. After SW returns to 0 at 140 ns, SW_SYNC also resets to 0 at 150 ns. Finally, at 160 ns, the button is pressed again, and at 170 ns, BTN_SYNC reflects the change while BTN_PREV shows the previous state.
+At the beginning, all signals are in an idle state (0). At 50 ns, the button (`BTN`) is pressed, and on the next clock edge at 60 ns, `BTN_SYNC` updates to 1. The button is released at 70 ns, and at 80 ns, `BTN_SYNC` returns to 0 while `BTN_PREV` updates to 1. The switch (`SW`) is turned on between 90–100 ns, and `SW_SYNC` updates to 1 at 100 ns. After `SW` returns to 0 at 140 ns, `SW_SYNC` also resets to 0 at 150 ns. Finally, at 160 ns, the button is pressed again, and at 170 ns, `BTN_SYNC` reflects the change while `BTN_PREV` shows the previous state.
 
 
 #### Counter Logic:
-counterLogic is needed to count operation based on the synchronized button and switch inputs. It increments or decrements the counter values according to the switch setting (`SW_SYNC`) when a button press (`BTN_SYNC`) is detected.
+`counterLogic` is needed to count operation based on the synchronized button and switch inputs. It increments or decrements the counter values according to the switch setting (`SW_SYNC`) when a button press (`BTN_SYNC`) is detected.
 
 
 ### Simulation of Counter Logic
 ![Snímek obrazovky 2025-04-28 185355](https://github.com/user-attachments/assets/94f15315-7e41-4e9c-abb6-494948c82583)
 
-When the button (`BTN_SYNC`) is pressed while the switch (`SW_SYNC`) is set for counting up. Therefore, with each rising edge of the clock (`CLK`), the first counter (`CNT1_OUT`) increments by 1, starting from 0. When CNT1_OUT exceed more then 9 come into oveflow it resets to 0 and the second counter (`CNT2_OUT`) increments by 1. When we change (SW_SYNC) to 1 walue starts decresing to 0.
+When the button (`BTN_SYNC`) is pressed while the switch (`SW_SYNC`) is set for counting up. Therefore, with each rising edge of the clock (`CLK`), the first counter (`CNT1_OUT`) increments by 1, starting from 0. When `CNT1_OUT` exceed more then 9 come into oveflow it resets to 0 and the second counter (`CNT2_OUT`) increments by 1. When we change (`SW_SYNC`) to 1 walue starts decresing to 0.
 
 
 ### Simulation of Overflowed CNT1_OUT
 ![přetečení counteru 1](https://github.com/user-attachments/assets/9dce0cf3-b1c1-47ae-9871-bbfaa7d8d70f)
-_This simulation shows what happends when CNT1_OUT overflow._
+This simulation shows what happends when `CNT1_OUT` overflow.
 
 
 ### Simulation Decresing CNT1_OUT and CNT2_OUT after overflow
 ![odčítání s přetečením ](https://github.com/user-attachments/assets/ffe77bd1-d16e-4c51-b09e-247583d1bc5b)
-_This simulation shows CNT1_OUT overrflows to CNT2_OUT, then we set SW on (1) to decrese values back to 0._
+This simulation shows `CNT1_OUT` overrflows to `CNT2_OUT`, then we set `SW` on (1) to decrese values back to 0.
 
 
 ### Simulation with using RST button
 ![restart ](https://github.com/user-attachments/assets/7d65bf1f-c73f-4efd-9b2a-c57a1c3665d2)
-_This simulation show what happends when we set RST to (1). In the moment on next rising edge of CLK are values of CNT1_OUT and CNT2_OUT is immediately sett to 0._
+This simulation show what happends when we set `RST` to (1). In the moment on next rising edge of `CLK` are values of `CNT1_OUT` and `CNT2_OUT` is immediately sett to 0.
 
 
 ## OUTPUT SECTION
 It's main purpouse is to display the data comming from counters to 7 Segment Displays.
 The output section consists of _2 main elements:_ **Multiplexer** and **StateMachine**
-Then there are _3 support elements:_ **Toggler**, **ClockEnable** and **bin2Seg**
+Then there are _3 support elements:_ `Toggler`, `ClockEnable` and `bin2Seg`
 ### Main elements:
 #### **State Machine:**
-**RTL SCHEMATIC**
+_RTL SCHEMATIC_
 ![SCH_stateMachine](https://github.com/user-attachments/assets/38a8e297-a9c3-4852-b8f7-2b267aeaaec7)
 
+
 #### INPUTS:
-- **RST**    # Global reset
-- **CLK**    # 100MHz clock
-- **EN**     # Event each 150us
+- **RST** - Global reset
+- **CLK** - 100MHz clock
+- **EN**  - Event each 150us
    
 #### OUTPUTS:
-- **stateM** # Multiplexer switch signal
-- **stateA** # 7 Segment anodes control
-- **stateDP**    # 7 Decimal points control
+- **stateM**  - Multiplexer switch signal
+- **stateA**  - Segment anodes control
+- **stateDP** - 7 Decimal points control
 
 #### INTERNAL SIGNALS:
-- **currentPos**
-- **nextPos**
+- `currentPos`
+- `nextPos`
 
-This block is **_responsible for multiplexing_** the _7 segment_ display trough the _8 to 1 multiplexer_
-It relies on the _clockEnable_ block as it's **_en_** input. it cycles trough it's predefined states _POS0 > POS7_, it changes the state on every _EN_ event.
+This block is **responsible for multiplexing** the _7 segment_ display trough the _8 to 1 multiplexer_
+It relies on the `clockEnable` block as it's `en` input. it cycles trough it's predefined states `POS0 > POS7`, it changes the state on every `EN` event.
 
 ![SM_multiplex_0](https://github.com/user-attachments/assets/0cd92251-c3b6-4c42-9668-b2330da2ed0f)
 
 
-The states of the FSM are stored in the internal signals _currentPos_ and _nextPos_.
-According to the _currentPos_ signal, the outputs are then set.
+The states of the FSM are stored in the internal signals `currentPos` and `nextPos`.
+According to the `currentPos` signal, the outputs are then set.
 
 **SIMULATION**
 ![SIM_stateMachine](https://github.com/user-attachments/assets/674893f3-4481-4f1a-9080-34706f7b2bda)
 
 #### **Multiplexer:**
 
-**RTL SCHEMATIC**
+_RTL SCHEMATIC_
 ![SCH_8to1Multiplex](https://github.com/user-attachments/assets/0c6d76c4-8f5a-4b98-a6a6-c0ca1a23c8d4)
 
 #### INPUTS:
-- `counter0` # input from corresponding counters
+- `counter0` - Input from corresponding counters
 - `counter1`
 - `counter2`
 - `counter3`
@@ -182,17 +183,17 @@ According to the _currentPos_ signal, the outputs are then set.
 - `counter5`
 - `counter6`
 - `counter7`
-- `switch`    # select input from StateMachine
+- `switch`    - Select input from StateMachine
 
 #### OUTPUTS:
-- `output`    # output counters data to bin2seg
+- `output`    - Output counters data to bin2seg
 
 _This block is a simple multiplexer._
 
 **SIMULATION**
 ![SIM_8to1Multiplex](https://github.com/user-attachments/assets/9f3d17fc-f20d-48a6-9503-88437e37a881)
 
-#### **Toggler:**
+#### Toggler:
 
 **RTL SCHEMATIC**
 ![SCH_toggler](https://github.com/user-attachments/assets/ce96e6f7-7da8-4e23-9643-3239686ccc38)
