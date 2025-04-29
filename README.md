@@ -221,7 +221,7 @@ This project was created using `Vivado Version: 2024.2`
 During the creation of this project, Generative Artificial Inteligence has been used for code autocompletition (Github Copilot), and references.
 
 # Team members and their respective work:
-- Gazda: Time counters section
-- Dzurus: Output section, Debouncing, Top Level
-- Gomba, Hedbavny: Score counters section
+- **Gazda**: Time counters section
+- **Dzurus**: Output section, Debouncing, Top Level
+- **Gomba, Hedbavny**: Score counters section
 
