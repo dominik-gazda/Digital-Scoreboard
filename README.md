@@ -1,5 +1,7 @@
 # Digital-Scoreboard
 Digital scoreboard with timer for your preferred sport
+![image](https://github.com/user-attachments/assets/854290e6-9fcd-4b49-a915-b066e36d47ce)
+
 
 https://github.com/user-attachments/assets/b2d13675-147e-4c68-bfc5-1ffb16f01535
 
